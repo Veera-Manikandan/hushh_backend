@@ -18,6 +18,12 @@ const SECRET_KEY = process.env.SECRET_KEY || "fallback_secret";
 
 app.use(cors({ origin: "*" }));
 
+app.use(cors({
+  origin: [
+    "http://localhost:5500",
+    "hushh-frontend-9fj8hn8ua-veeramanikandans-projects-3e2a7372.vercel.app"
+  ]
+}));
 
 // REGISTER API
 app.post("/register", async (req, res) => {
